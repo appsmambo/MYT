@@ -4,7 +4,9 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Latina, el canal del mundial | Latina</title>
+        <title>Tecnología de TV | latina.pe</title>
+        <link href="{{url('img/logo-latina.png')}}" rel="apple-touch-icon">
+        <link href="{{url('img/logo-latina.png')}}" rel="icon" sizes="192x192">
         <meta name="csrf-token" content="{{csrf_token()}}">
         <link rel="stylesheet" type="text/css" href="{{url('css/bootstrap.min.css?v=')}}"/>
         <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/theme-default.min.css" rel="stylesheet"/>

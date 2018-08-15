@@ -18,12 +18,6 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="codigo" class="col-sm-3 col-form-label">Código</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" name="codigo" id="codigo" data-validation="required" data-validation-error-msg="Ingrese el código">
-                </div>
-            </div>
-            <div class="form-group row">
                 <label for="dia" class="col-sm-3 col-form-label">Fecha de inicio</label>
                 <div class="col-sm-9">
                     <div class="row">

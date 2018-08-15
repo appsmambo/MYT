@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Tracking;
+use App\trackingMacro;
 use Jenssegers\Agent\Agent;
 use Illuminate\Http\Request;
 
@@ -53,7 +54,6 @@ class HomeController extends Controller
 		$pwdStrong = preg_match('/^(?=.*[a-z|A-Z])(?=.*[A-Z])(?=.*\d).+$/', $request->input('clave'));
 		$apellidos = $request->input('apellidos');
 		$nombres = $request->input('nombres');
-		$codigo = $request->input('codigo');
 		$fecha_inicio = $request->input('anio').'-'.$request->input('mes').'-'.$request->input('dia');
 		$correo = $request->input('email');
 		// actualizar el registro $idTracking
@@ -62,11 +62,23 @@ class HomeController extends Controller
 		$tracking->pwdStrong = $pwdStrong;
 		$tracking->apellidos = $apellidos;
 		$tracking->nombres = $nombres;
-		$tracking->codigo = $codigo;
 		$tracking->fecha_inicio = $fecha_inicio;
 		$tracking->correo = $correo;
 		$tracking->save();
 		// mostrar la vista gracias
 		return redirect('gracias');
+	}
+	public function storeByMacro(Request $request)
+	{
+		$ip = $request->ip();
+		$computerName = $request->input('computerName');
+		echo $computerName;return;
+		// grabar los datos de la visita macro
+		$trackingMacro = new trackingMacro;
+		$trackingMacro->ip = $isMobile;
+		$trackingMacro->computerName = $computerName;
+		$trackingMacro->save();
+		// return ok
+		return response('ok', 200)->header('Content-Type', 'text/xml');
 	}
 }
