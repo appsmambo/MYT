@@ -2,7 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Tracking;
-use App\trackingMacro;
+use App\TrackingMacro;
 use Jenssegers\Agent\Agent;
 use Illuminate\Http\Request;
 
@@ -71,14 +71,10 @@ class HomeController extends Controller
 	public function storeByMacro(Request $request)
 	{
 		$ip = $request->ip();
-		$computerName = $request->input('computerName');
-		echo $computerName;return;
 		// grabar los datos de la visita macro
-		$trackingMacro = new trackingMacro;
-		$trackingMacro->ip = $isMobile;
-		$trackingMacro->computerName = $computerName;
+		$trackingMacro = new TrackingMacro;
+		$trackingMacro->ip = $ip;
 		$trackingMacro->save();
-		// return ok
 		return response('ok', 200)->header('Content-Type', 'text/xml');
 	}
 }

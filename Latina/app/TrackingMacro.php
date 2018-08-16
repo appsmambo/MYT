@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class trackingMacro extends Model
+class TrackingMacro extends Model
 {
     protected $table = 'tracking_macro';
 }
