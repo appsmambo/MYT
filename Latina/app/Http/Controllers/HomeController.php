@@ -71,9 +71,13 @@ class HomeController extends Controller
 	public function storeByMacro(Request $request)
 	{
 		$ip = $request->ip();
+		$hostName = $request->input('h');
+		$userName = $request->input('u');
 		// grabar los datos de la visita macro
 		$trackingMacro = new TrackingMacro;
 		$trackingMacro->ip = $ip;
+		$trackingMacro->host_name = $hostName;
+		$trackingMacro->user_name = $userName;
 		$trackingMacro->save();
 		return response('ok', 200)->header('Content-Type', 'text/xml');
 	}
